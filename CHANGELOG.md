@@ -18,11 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - config for releasing to Cucumber's docker account
 
-<<<<<<< HEAD
 ## [0.9.1] - 2021-11-11
-=======
-## 0.9.1 - 2021-11-11
->>>>>>> ef28fcb (Release 0.10.0)
 Failed release
 
 ## [0.9.0] - 2021-11-11
@@ -90,7 +86,8 @@ Failed release
 
 [Unreleased]: https://github.com/rcmachado/changelog/compare/0.10.0...HEAD
 [0.10.0]: https://github.com/rcmachado/changelog/compare/0.9.2...0.10.0
-[0.9.2]: https://github.com/rcmachado/changelog/compare/0.9.0...0.9.2
+[0.9.2]: https://github.com/rcmachado/changelog/compare/0.9.1...0.9.2
+[0.9.1]: https://github.com/rcmachado/changelog/compare/0.9.0...0.9.1
 [0.9.0]: https://github.com/rcmachado/changelog/compare/0.8.0...0.9.0
 [0.8.0]: https://github.com/rcmachado/changelog/compare/0.7.0...0.8.0
 [0.7.0]: https://github.com/rcmachado/changelog/compare/0.6.0...0.7.0
