@@ -29,22 +29,22 @@ jobs:
           version: latest
           args: build --snapshot --rm-dist
 
-    release:
-      runs-on: ubuntu-latest
-      environment: Release
-      needs: build
-      if: "startsWith(github.ref, 'refs/tags/')"
-      steps:
-        - name: Prepare release notes
-          run: ./dist/changelog_linux_amd64/changelog -f CHANGELOG.md show ${GITHUB_REF##*/} > release-notes.txt
+  release:
+    runs-on: ubuntu-latest
+    environment: Release
+    needs: build
+    if: "startsWith(github.ref, 'refs/tags/')"
+    steps:
+      - name: Prepare release notes
+        run: ./dist/changelog_linux_amd64/changelog -f CHANGELOG.md show ${GITHUB_REF##*/} > release-notes.txt
 
-        - name: Docker login
-          run: docker login -u '${{ secrets.DOCKER_HUB_USER }}' -p '${{ secrets.DOCKER_HUB_PASSWORD }}'
+      - name: Docker login
+        run: docker login -u '${{ secrets.DOCKER_HUB_USER }}' -p '${{ secrets.DOCKER_HUB_PASSWORD }}'
 
-        - name: Release
-          uses: goreleaser/goreleaser-action@v2
-          with:
-            version: latest
-            args: release --release-notes release-notes.txt --rm-dist
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Release
+        uses: goreleaser/goreleaser-action@v2
+        with:
+          version: latest
+          args: release --release-notes release-notes.txt --rm-dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
