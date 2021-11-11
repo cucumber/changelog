@@ -5,10 +5,7 @@ env:
   TEST_RESULTS: /tmp/test-results
 
 on:
-  pull_request:
   push:
-    branches:
-      - main
 
 jobs:
   tests:
