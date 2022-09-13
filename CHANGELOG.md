@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Allow nested bullets under a change item ([#16](https://github.com/cucumber/changelog/pull/16))
 
 ## [0.10.0] - 2021-11-11
 ### Added
@@ -19,7 +21,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - config for releasing to Cucumber's docker account
 
 ## [0.9.1] - 2021-11-11
-Failed release
 
 ## [0.9.0] - 2021-11-11
 ### Fixed
