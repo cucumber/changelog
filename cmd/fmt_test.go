@@ -30,6 +30,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Command A
 - Command B
+  - a detail
+  - another detail
 - Command C
 
 [Unreleased]: https://github.com/rcmachado/changelog/compare/0.2.0...HEAD
@@ -54,6 +56,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Command A
 - Command B
+  - a detail
+  - another detail
 - Command C
 
 [Unreleased]: https://github.com/rcmachado/changelog/compare/0.2.0...HEAD
@@ -105,7 +109,8 @@ Hello
           "type": "changed",
           "items": [
             {
-              "description": "Out of order entries"
+              "description": "Out of order entries",
+              "items": null
             }
           ]
         },
@@ -113,7 +118,8 @@ Hello
           "type": "added",
           "items": [
             {
-              "description": "Something else"
+              "description": "Something else",
+              "items": null
             }
           ]
         }
@@ -129,7 +135,8 @@ Hello
           "type": "added",
           "items": [
             {
-              "description": "Command A"
+              "description": "Command A",
+              "items": null
             }
           ]
         }

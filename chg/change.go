@@ -93,7 +93,7 @@ func NewChangeList(ct string) *ChangeList {
 // RenderItems renders all the items
 func (c *ChangeList) RenderItems(w io.Writer) {
 	for _, i := range c.Items {
-		i.Render(w)
+		i.Render(w, 0)
 	}
 }
 

@@ -44,6 +44,7 @@ type renderer struct {
 	reVersion      *regexp.Regexp  // matches the version line
 	currentVersion *chg.Version    // current version being parsed
 	currentChange  *chg.ChangeList // current changelist being parsed
+	currentItem    *chg.Item       // current list item being parsed
 }
 
 func (r *renderer) Result() *chg.Changelog {
@@ -183,10 +184,21 @@ func (r *renderer) Link(w io.Writer, node *blackfriday.Node, entering bool) blac
 // ListItem is called for each item
 func (r *renderer) ListItem(w io.Writer, node *blackfriday.Node, entering bool) blackfriday.WalkStatus {
 	if r.currentChange != nil {
-		var buf bytes.Buffer
-		r.renderInline(&buf, node, entering)
-		item := &chg.Item{Description: buf.String()}
-		r.currentChange.Items = append(r.currentChange.Items, item)
+		if r.currentItem == nil {
+			// render "parent" list item
+			r.currentItem = &chg.Item{Description: ""}
+			var buf bytes.Buffer
+			r.renderInline(&buf, node, entering)
+			r.currentItem.Description = buf.String()
+			r.currentChange.Items = append(r.currentChange.Items, r.currentItem)
+			r.currentItem = nil
+		} else {
+			// render "child" list item
+			var buf bytes.Buffer
+			r.renderInline(&buf, node, entering)
+			child := &chg.Item{Description: buf.String()}
+			r.currentItem.Items = append(r.currentItem.Items, child)
+		}
 	}
 
 	return blackfriday.SkipChildren

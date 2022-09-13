@@ -166,7 +166,8 @@ func TestChangelogEncodeJson(t *testing.T) {
           "type": "added",
           "items": [
             {
-              "description": "New feature"
+              "description": "New feature",
+              "items": null
             }
           ]
         }
