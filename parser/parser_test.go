@@ -34,13 +34,13 @@ func TestParserParse(t *testing.T) {
 						{
 							Type: chg.Added,
 							Items: []*chg.Item{
-								{"Awesome feature that people always asked for"},
+								{Description: "Awesome feature that people always asked for"},
 							},
 						},
 						{
 							Type: chg.Fixed,
 							Items: []*chg.Item{
-								{"That annoying bug"},
+								{Description: "That annoying bug"},
 							},
 						},
 					},
@@ -54,7 +54,7 @@ func TestParserParse(t *testing.T) {
 						{
 							Type: chg.Security,
 							Items: []*chg.Item{
-								{"Remote code execution using our eval endpoint"},
+								{Description: "Remote code execution using our eval endpoint"},
 							},
 						},
 					},
@@ -133,13 +133,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 						{
 							Type: chg.Added,
 							Items: []*chg.Item{
-								{"Awesome feature that people always asked for"},
+								{Description: "Awesome feature that people always asked for"},
 							},
 						},
 						{
 							Type: chg.Fixed,
 							Items: []*chg.Item{
-								{"That annoying bug"},
+								{Description: "That annoying bug"},
 							},
 						},
 					},
@@ -152,7 +152,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 						{
 							Type: chg.Security,
 							Items: []*chg.Item{
-								{"Remote code execution using our eval endpoint"},
+								{Description: "Remote code execution using our eval endpoint"},
 							},
 						},
 					},
@@ -177,8 +177,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 						{
 							Type: chg.Added,
 							Items: []*chg.Item{
-								{"Item 1"},
-								{"Item 2"},
+								{Description: "Item 1"},
+								{Description: "Item 2"},
+							},
+						},
+					},
+				},
+			},
+		}
+
+		result := parser.Parse(input)
+		assert.Equal(t, expected, result)
+	})
+
+	t.Run("indented-bullets", func(t *testing.T) {
+		input := readFile(t, "indented-bullets")
+
+		expected := &chg.Changelog{
+			Preamble: "Simple paragraph.",
+			Versions: []*chg.Version{
+				{
+					Name: "Unreleased",
+					Link: "http://example.com/abcdef..HEAD",
+					Changes: []*chg.ChangeList{
+						{
+							Type: chg.Added,
+							Items: []*chg.Item{
+								{
+									Description: "Item 1",
+									Items: []*chg.Item{
+										{
+											Description: "a detail",
+										},
+									},
+								},
 							},
 						},
 					},

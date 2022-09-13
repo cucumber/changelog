@@ -111,15 +111,15 @@ func TestRenderChanges(t *testing.T) {
 		{
 			Type: Added,
 			Items: []*Item{
-				{"Item 1"},
-				{"Item 2"},
+				{Description: "Item 1"},
+				{Description: "Item 2"},
 			},
 		},
 		{
 			Type: Changed,
 			Items: []*Item{
-				{"Item A"},
-				{"Item B"},
+				{Description: "Item A"},
+				{Description: "Item B"},
 			},
 		},
 	}
@@ -147,15 +147,15 @@ func TestVersionRender(t *testing.T) {
 		{
 			Type: Added,
 			Items: []*Item{
-				{"Item 1"},
-				{"Item 2"},
+				{Description: "Item 1"},
+				{Description: "Item 2"},
 			},
 		},
 		{
 			Type: Changed,
 			Items: []*Item{
-				{"Item A"},
-				{"Item B"},
+				{Description: "Item A"},
+				{Description: "Item B"},
 			},
 		},
 	}
