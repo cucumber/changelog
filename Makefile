@@ -8,13 +8,13 @@ install: ## Install tools used by the project
 		curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | \
 		sh -s -- -b $(GOBIN) v1.49.0
 
-build:
+build: ## Compile the Go code into a binary
 	go build -o changelog main.go
 
-test:
+test: ## Run the tests
 	go test -cover ./...
 
-lint:
+lint: ## Lint the code
 	$(GOBIN)/golangci-lint run
 
 release: build
