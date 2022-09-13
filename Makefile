@@ -5,7 +5,8 @@ install: ## Install tools used by the project
 	fgrep '_' tools.go | cut -f2 -d' ' | xargs go install
 	# golangci-lint project doesn't recommend to install from go modules
 	[ `which $(GOBIN)/golangci-lint` ] || \
-		curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/v1.49.0/install.sh | sh -s -- -b $(GOBIN) v1.43.0
+		curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | \
+		sh -s -- -b $(GOBIN) v1.49.0
 
 build:
 	go build -o changelog main.go
