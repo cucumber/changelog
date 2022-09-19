@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Fixed
 - Allow nested bullets under a change item ([#16](https://github.com/cucumber/changelog/pull/16))
+- Stop mangling changelogs when reformatting makes the file shorter than the original ([#17](https://github.com/cucumber/changelog/pull/17))
 
 ## [0.10.0] - 2021-11-11
 ### Added
