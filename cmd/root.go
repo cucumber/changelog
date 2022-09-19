@@ -2,8 +2,10 @@ package cmd
 
 import (
 	"bufio"
+	"bytes"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -24,11 +26,16 @@ var rootCmd = &cobra.Command{
 	Long:  `changelog manipulate and validate markdown changelog files following the keepachangelog.com specification.`,
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
 		fs := cmd.Flags()
-
 		fdr := openFileOrExit(fs, "filename", os.O_RDONLY, os.Stdin)
-		ioStreams.In = bufio.NewReader(fdr)
+		input, err := ioutil.ReadAll(fdr)
+		if err != nil {
+			fmt.Printf("Failed to read input: %v", err)
+			os.Exit(1)
+		}
+		fdr.Close()
+		ioStreams.In = bytes.NewReader(input)
 
-		fdw := openFileOrExit(fs, "output", os.O_WRONLY|os.O_CREATE, os.Stdout)
+		fdw := openFileOrExit(fs, "output", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.Stdout)
 		ioStreams.Out = bufio.NewWriter(fdw)
 	},
 	PersistentPostRun: func(cmd *cobra.Command, args []string) {
