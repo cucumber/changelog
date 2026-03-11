@@ -20,6 +20,8 @@ jobs:
 
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - name: Create temp directories
         run: mkdir -p $TEST_RESULTS
