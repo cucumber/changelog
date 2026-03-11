@@ -4,9 +4,12 @@ permissions: {}
 
 on:
   pull_request:
+    branches:
+      - '**'
   push:
     branches:
       - main
+      - renovate/**
 
 jobs:
   golangci:
@@ -14,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
       - name: golangci-lint
         uses: golangci/golangci-lint-action@537aa1903e5d359d0b27dbc19ddd22c5087f3fbc #v3.2.0
         with:
