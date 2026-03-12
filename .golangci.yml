@@ -1,20 +1,36 @@
+version: "2"
 linters:
-  disable-all: false
+  enable:
+    - misspell
+    - nakedret
   disable:
     - dupl
     - errcheck
-    - gas
     - gocyclo
-    - megacheck
-    - goimports
+    - gosec
+    - staticcheck
+    - unused
+  settings:
+    govet:
+      disable:
+        - composites
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
   enable:
     - gofmt
-    - gosimple
-    - unused
-    - staticcheck
-    - nakedret
-    - misspell
-linters-settings:
-  govet:
-    disable:
-      - composites
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
