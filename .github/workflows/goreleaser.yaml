@@ -37,8 +37,9 @@ jobs:
           args: build --snapshot
 
       - name: Prepare release notes
-        run: ./dist/changelog_linux_amd64/changelog show "$(changelog latest)" > release-notes.txt
-
+        run: |
+          VERSION=$(./dist/changelog_linux_amd64/changelog latest -f CHANGELOG.md)
+          ./dist/changelog_linux_amd64/changelog show "$VERSION" -f CHANGELOG.md > release-notes.txt
       - name: Docker login
         run: docker login -u '${{ secrets.DOCKER_HUB_USER }}' -p '${{ secrets.DOCKER_HUB_PASSWORD }}'
 
