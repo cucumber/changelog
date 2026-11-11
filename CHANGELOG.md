@@ -88,19 +88,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `fmt` command to reformat changelog following the spec
 - `show` command to show a specific version
 
-[Unreleased]: https://github.com/rcmachado/changelog/compare/0.10.0...HEAD
-[0.10.1]: https://github.com/rcmachado/changelog/compare/0.10.0...v0.10.1
-[0.10.0]: https://github.com/rcmachado/changelog/compare/0.9.2...0.10.0
-[0.9.2]: https://github.com/rcmachado/changelog/compare/0.9.1...0.9.2
-[0.9.1]: https://github.com/rcmachado/changelog/compare/0.9.0...0.9.1
-[0.9.0]: https://github.com/rcmachado/changelog/compare/0.8.0...0.9.0
-[0.8.0]: https://github.com/rcmachado/changelog/compare/0.7.0...0.8.0
-[0.7.0]: https://github.com/rcmachado/changelog/compare/0.6.0...0.7.0
-[0.6.0]: https://github.com/rcmachado/changelog/compare/0.5.0...0.6.0
-[0.5.0]: https://github.com/rcmachado/changelog/compare/0.4.2...0.5.0
-[0.4.2]: https://github.com/rcmachado/changelog/compare/0.4.1...0.4.2
-[0.4.1]: https://github.com/rcmachado/changelog/compare/0.4.0...0.4.1
-[0.4.0]: https://github.com/rcmachado/changelog/compare/0.3.0...0.4.0
-[0.3.0]: https://github.com/rcmachado/changelog/compare/0.2.0...0.3.0
-[0.2.0]: https://github.com/rcmachado/changelog/compare/0.1.0...0.2.0
-[0.1.0]: https://github.com/rcmachado/changelog/compare/ae761ff...0.1.0
+[Unreleased]: https://github.com/cucumber/changelog/compare/v0.10.1...HEAD
+[0.10.1]: https://github.com/cucumber/changelog/compare/0.10.0...v0.10.1
+[0.10.0]: https://github.com/cucumber/changelog/compare/0.9.2...0.10.0
+[0.9.2]: https://github.com/cucumber/changelog/compare/0.9.1...0.9.2
+[0.9.1]: https://github.com/cucumber/changelog/compare/0.9.0...0.9.1
+[0.9.0]: https://github.com/cucumber/changelog/compare/0.8.0...0.9.0
+[0.8.0]: https://github.com/cucumber/changelog/compare/0.7.0...0.8.0
+[0.7.0]: https://github.com/cucumber/changelog/compare/0.6.0...0.7.0
+[0.6.0]: https://github.com/cucumber/changelog/compare/0.5.0...0.6.0
+[0.5.0]: https://github.com/cucumber/changelog/compare/0.4.2...0.5.0
+[0.4.2]: https://github.com/cucumber/changelog/compare/0.4.1...0.4.2
+[0.4.1]: https://github.com/cucumber/changelog/compare/0.4.0...0.4.1
+[0.4.0]: https://github.com/cucumber/changelog/compare/0.3.0...0.4.0
+[0.3.0]: https://github.com/cucumber/changelog/compare/0.2.0...0.3.0
+[0.2.0]: https://github.com/cucumber/changelog/compare/0.1.0...0.2.0
+[0.1.0]: https://github.com/cucumber/changelog/compare/ae761ff...0.1.0
