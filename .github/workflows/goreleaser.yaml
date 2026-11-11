@@ -38,8 +38,8 @@ jobs:
 
       - name: Prepare release notes
         run: |
-          VERSION=$(./dist/changelog_linux_amd64/changelog latest -f CHANGELOG.md)
-          ./dist/changelog_linux_amd64/changelog show "$VERSION" -f CHANGELOG.md > release-notes.txt
+          VERSION=$(./dist/changelog_linux_amd64_v1/changelog latest -f CHANGELOG.md)
+          ./dist/changelog_linux_amd64_v1/changelog show "$VERSION" -f CHANGELOG.md > release-notes.txt
       - name: Docker login
         run: docker login -u '${{ secrets.DOCKER_HUB_USER }}' -p '${{ secrets.DOCKER_HUB_PASSWORD }}'
 
