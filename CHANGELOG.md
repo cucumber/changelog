@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.10.1] - 2026-11-11
 ### Fixed
 - Allow nested bullets under a change item ([#16](https://github.com/cucumber/changelog/pull/16))
 - Stop mangling changelogs when reformatting makes the file shorter than the original ([#17](https://github.com/cucumber/changelog/pull/17))
@@ -87,6 +89,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `show` command to show a specific version
 
 [Unreleased]: https://github.com/rcmachado/changelog/compare/0.10.0...HEAD
+[0.10.1]: https://github.com/rcmachado/changelog/compare/0.10.0...v0.10.1
 [0.10.0]: https://github.com/rcmachado/changelog/compare/0.9.2...0.10.0
 [0.9.2]: https://github.com/rcmachado/changelog/compare/0.9.1...0.9.2
 [0.9.1]: https://github.com/rcmachado/changelog/compare/0.9.0...0.9.1
